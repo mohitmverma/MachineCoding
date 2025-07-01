@@ -1,0 +1,53 @@
+News Timeline
+Your aim is to write a console program that can simulate a social network.
+Users have the following capabilities
+A user should be able to login to the network (user will be created if it does not exist).
+A user should be able to post a feed item.
+A user should be able to follow/unfollow other users in this network.
+A user should be able to upvote/downvote (+1, -1) the posts appearing in their timeline.
+A user can read his news timeline. News items posted by only the following users should be visible. News items are sorted based on default criteria, ie, the most recent news items should be displayed first. The strategy should be extendable for modifications. One should be able to add new strategies without touching unrelated code blocks.
+Input and output
+The inputs for various actions supported should be taken by invoking some method. The method signature should contain sufficient information to support all the requirements. For Time related queries, you can assume time to be single dimension (like integer)
+
+You may change the input output format without changing the functionality to suit your needs.
+
+Sample Examples
+1. Bob logging in
+login(“bob”)
+2. Lee logging in
+login(“lee”)
+3. Bob posting message
+post(“bob”, {“text”;“This is bob’s first post”, “ts”:1} )
+4. Lee’s timeline
+timeline(“lee”) => [ ] (Empty list as lee does not follow anyone yet)
+5. Lee starts following Bob
+	follow(“lee”, “bob”)
+6. Lee’s timeline
+	timeline(“lee”) => [ {“bob”, “text”: “This is Bob’s first message”}]
+7. Tom logging in
+	login(“tom”)
+8. Tom posting message
+	post(“tom”, {“text”:“This is Tom’s first message”, “ts” : 2})
+9. Lee starts following tom
+	follow(“lee”, “tom”)
+10. Lee’s Timeline (Default timeline strategy used here. Recent Messages displayed first)
+	timeline(“lee”) => [{“tom”, “This is Tom’s first message”},
+{“bob”, “This is Bob’s first message”}]
+
+Guidelines:
+Write a driver class for demo purposes.
+Output can be written to STDOUT.
+Store all the data in-memory.
+You are free to use the language of your choice.
+Do not create any UI for the application.
+Save your code/project by your name and email it. Your program will be executed on another machine. So, explicitly specify dependencies, if any, in your email.
+
+Expectations:
+Code should be demo-able (very important). Code  should be functionally correct and complete.
+At the end of this interview round, an interviewer will provide multiple inputs to your program for which it is expected to work
+Code should handle edge cases properly and fail gracefully. Add suitable exception handling, wherever applicable.
+Code should have good object-oriented design.
+Code should be readable, modular, testable and extensible. Use intuitive names for your variables, methods and classes.
+It should be easy to add/remove functionality without rewriting a lot of code.
+Do not write monolithic code.
+Don’t use any databases.

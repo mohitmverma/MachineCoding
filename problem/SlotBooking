@@ -1,0 +1,69 @@
+Doubt Booking System.
+
+
+User
+Your aim is to write a console program that can simulate a System for booking doubt slots.
+System should have following capabilities
+● Register a new teacher
+● Register a student
+● Teachers can add the available doubt slots for various subjects, center
+● Students can view the available slots based on various criteria like subject, center etc
+● Students can select an available slot depending on his preference
+● Students can opt for auto assignment of slot based on various preferences
+○ Prefer the earliest slot available in the given center
+○ Prefer the previously assigned teacher. If this teacher is not available, any earliest slot
+● Students can list the slots reserved
+● For the sake of simplicity, you can assume the duration of each slot is 1 hour
+○ While adding the slot, if the time duration between start and end time is greater than 1 hour, it should be considered as multiple slots of 1 hour each.
+
+Input and output
+The inputs for various actions supported should be taken by invoking some method. The method signature should contain sufficient information to support all the requirements.You can change input and output format.
+You may change the input output format without changing the functionality to suit your needs.
+Sample Test Cases ;
+1. addUser(“Akhilesh”, “Teacher”)
+2. addUser(“Nikhil”, “Teacher”)
+3. addUser(“Raj”, “Student”)
+4. addUser(“Megha”, “Student”)
+5. addSlots(“Akhilesh”, “Jayanagar”, “Physics”, “09”,”10”)
+6. addSlots(“Akhilesh”, “Jayanagar”, “Physics”, “14”,”17”)
+7. addSlots(“Nikhil”, “HSR”, “Chemistry”, “09”, “10”)
+8. addSlots(“Nikhil”, “HSR”, “Chemistry”, “12”, “13”)
+9. addSlots(“Akhilesh”, “HSR”, “Chemistry”, “11”, “13”)
+10.listSlots(“HSR”, “Chemistry”)
+
+Output: (“Nikhil”, “HSR”, “Chemistry”, “09”)
+(“Akhilesh”, “HSR”, “Chemistry”, “11”)
+(“Akhilesh”, “HSR”, “Chemistry”, “12”)
+(“Nikhil”, “HSR”, “Chemistry”, “12”)
+
+11. reserveSlot(“Raj”,“Nikhil”, “HSR”, “Chemistry”, “09”)
+Output: reserved (“Nikhil”, “HSR”, “Chemistry”, “09”)
+
+12.reserveSlot(“Megha”,“HSR”,“Chemistry”,”FIRST_AVAILABLE”)
+Output: reserved (“Akhilesh”, “HSR”, “Chemistry”, “11”)
+
+13.reserveSlot(“Raj”,“HSR”,“Chemistry”,”PREVIOUSLY_ASSIGNED_TEACHER”)
+Output: reserved (“Nikhil”, “HSR”, “Chemistry”, “12”)
+14.reserveSlot(“Raj”,“HSR”,“Physics”)
+Output: no slots available
+15.listReservedSlots(“Raj”)
+Output: [(“Nikhil”, “HSR”, “Chemistry”, “09”)]
+
+Guidelines:
+● Write a driver class for demo purposes.
+● Output can be written to STDOUT.
+● Store all the data in-memory.
+● You are free to use the language of your choice.
+● Do not create any UI for the application.
+● Save your code/project by your name and email it. Your program will be executed on another machine. So, explicitly specify dependencies, if any, in your email.
+
+
+Expectations:
+● Code should be demo-able (very important). Code should be functionally correct and complete.
+○ At the end of this interview round, an interviewer will provide multiple inputs to your program for which it is expected to work
+● Code should handle edge cases properly and fail gracefully. Add suitable exception handling, wherever applicable.
+● Code should have good object-oriented design.
+● Code should be readable, modular, testable and extensible. Use intuitive names for your variables, methods and classes.
+○ It should be easy to add/remove functionality without rewriting a lot of code.
+○ Do not write monolithic code.
+● Don’t use any databases.
